@@ -12,31 +12,34 @@ import Welcome from './Components/Welcome';
 function App() {
   return (
     <div className="App">
-      {/* /* <Greet name="Varun" hero="super man">
+
+{/*       
+       <Greet name="Varun" hero="super man">
         <p>Hi, I am a paragraph !!</p>
       </Greet>
       <Greet name="Rhihanna" hero="bat man" />
       <Greet name="Naushad"  hero="spider man">
         <button>Click</button>
-      </Greet> */} 
+      </Greet>  */}
 
      {/* SecCompo is a class component */}
        {/* <Welcome name ="vishnu" age="18"/>
        <Welcome name ="Pranjal" age="23"/>
 
-       <Message /> */}
+       <Message />
 
-      {/* <Hello />  */}
+      <Hello /> 
 
-      {/* <Counter /> */}
-      {/* <Greet name="Varun" heroname = "superman"></Greet> */}
+      <Counter />
+      <Greet name="Varun" heroname = "superman"></Greet>
 
-      {/* <Welcome fname="Rahul" lname = "Sharma"></Welcome> */}
+      <Welcome fname="Rahul" lname = "Sharma"></Welcome>
 
-      {/* <FunClick /> */}
-      {/* <ClassClick /> */}
+      <FunClick />
+      <ClassClick />
+     <EventBind /> */}
 
-      <EventBind />
+
     </div>
   );
 }
