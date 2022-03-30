@@ -8,10 +8,12 @@ import Greet from './Components/Greet'
 import Hello from './Components/Hello';
 import Message from './Components/Hello';
 import Welcome from './Components/Welcome';
+import ExpenseItem from './Components/ExpenseItem';
 
 function App() {
   return (
     <div className="App">
+
 
 {/*       
        <Greet name="Varun" hero="super man">
@@ -38,6 +40,14 @@ function App() {
       <FunClick />
       <ClassClick />
      <EventBind /> */}
+
+
+     <ExpenseItem date="2022-03-30" expenseItem="Life Insurance" expenseAmount="234.45"></ExpenseItem>
+     <ExpenseItem date="2022-02-31" expenseItem="Care Insurance" expenseAmount="134.45"></ExpenseItem>
+     <ExpenseItem date="2022-01-12" expenseItem="Guitar" expenseAmount="134.45"></ExpenseItem>
+     <ExpenseItem date="2022-02-15" expenseItem="Laptop" expenseAmount="343.45"></ExpenseItem>
+
+
 
 
     </div>
