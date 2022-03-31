@@ -1,21 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import EventBind from './Components/EventBind';
-import ClassClick from './Components/ClassClick';
-import Counter from './Components/Counter';
-import FunClick from './Components/FunClick';
-import Greet from './Components/Greet'
-import Hello from './Components/Hello';
-import Message from './Components/Hello';
-import Welcome from './Components/Welcome';
-import ExpenseItem from './Components/ExpenseItem';
+import logo from "./logo.svg";
+import "./App.css";
+import EventBind from "./Components/EventBind";
+import ClassClick from "./Components/ClassClick";
+import Counter from "./Components/Counter";
+import FunClick from "./Components/FunClick";
+import Greet from "./Components/Greet";
+import Hello from "./Components/Hello";
+import Message from "./Components/Hello";
+import Welcome from "./Components/Welcome";
+import ExpenseItem from "./Components/ExpenseItem";
 
 function App() {
   return (
     <div className="App">
-
-
-{/*       
+      {/*       
        <Greet name="Varun" hero="super man">
         <p>Hi, I am a paragraph !!</p>
       </Greet>
@@ -24,8 +22,8 @@ function App() {
         <button>Click</button>
       </Greet>  */}
 
-     {/* SecCompo is a class component */}
-       {/* <Welcome name ="vishnu" age="18"/>
+      {/* SecCompo is a class component */}
+      {/* <Welcome name ="vishnu" age="18"/>
        <Welcome name ="Pranjal" age="23"/>
 
        <Message />
@@ -41,15 +39,34 @@ function App() {
       <ClassClick />
      <EventBind /> */}
 
-
-     <ExpenseItem date="2022-03-30" expenseItem="Life Insurance" expenseAmount="234.45"></ExpenseItem>
-     <ExpenseItem date="2022-02-31" expenseItem="Care Insurance" expenseAmount="134.45"></ExpenseItem>
-     <ExpenseItem date="2022-01-12" expenseItem="Guitar" expenseAmount="134.45"></ExpenseItem>
-     <ExpenseItem date="2022-02-15" expenseItem="Laptop" expenseAmount="343.45"></ExpenseItem>
-
-
-
-
+      <ExpenseItem
+        date="12"
+        month="July"
+        year="2022"
+        expenseItem="Life Insurance"
+        expenseAmount="234.45"
+      />
+      <ExpenseItem
+      date="12"
+      month="July"
+      year="2022"
+      expenseItem="Life Insurance"
+      expenseAmount="234.45"
+      />
+      <ExpenseItem
+      date="12"
+      month="July"
+      year="2022"
+      expenseItem="Life Insurance"
+      expenseAmount="234.45"  
+      />
+      <ExpenseItem
+      date="12"
+      month="July"
+      year="2022"
+      expenseItem="Life Insurance"
+      expenseAmount="234.45"
+      />
     </div>
   );
 }
