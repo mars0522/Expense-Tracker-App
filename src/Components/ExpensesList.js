@@ -5,9 +5,9 @@ import './ExpensesList.css';
 const ExpensesList = (props)=>{
 
 if(props.filteredArray.length === 0)
-return <h2 className="expenses-list__fallback"> Not found !</h2>
+return <h2 className="expenses-list__fallback"> Found No Expenses !</h2>
 else{
-    return <div>
+    return <div className="expenses-list">
 
     { props.filteredArray.map( expense => (<ExpenseItem 
         date={expense.date}
