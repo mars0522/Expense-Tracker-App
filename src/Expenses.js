@@ -1,6 +1,7 @@
 import React ,{useState} from 'react';
 import ExpenseItem from "./Components/ExpenseItem";
 import ExpensesFilter from "./Components/NewExpense/ExpensesFilter";
+import ExpensesList from './Components/ExpensesList';
 import './Expenses.css'
 
 function Expenses(props){
@@ -34,14 +35,18 @@ function Expenses(props){
 
             <ExpensesFilter selected={Year} filter={ExpenseFilterHandler}/>  
         
-            {filteredArray.length===0 && <p >No Item found !!</p>}
+           {/*  {filteredArray.length===0 && <p >No Item found !!</p>}
             {filteredArray.length > 0 && 
             filteredArray.map( expense => (<ExpenseItem 
                 date={expense.date}
                 title={expense.title}
                 amount={expense.amount}
                 key={expense.date} // Whenever you are using map in React always add key prop
-                />))}
+                />))}*/}
+
+            <ExpensesList filteredArray= {filteredArray} />
+
+
         {/* {expenseContent}*/}
           
         </div>
