@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import EventBind from "./Components/EventBind";
@@ -14,19 +14,19 @@ import NewExpense from "./Components/NewExpense/NewExpense";
 
 let expenses = [
   {
-    title:'Life Insurance',
-    amount:300,
-    date: new Date(2020,7,14),
-  }
-]
+    title: "Life Insurance",
+    amount: 300,
+    date: new Date(2020, 7, 14),
+  },
+];
 function App() {
-
-  const [expense_arr , updateExpenses] = useState(expenses);
-   const onAddExpenseHandler = (AddedItem)=>{ 
-   
-    updateExpenses([...expense_arr,AddedItem]);
+  let [expense_arr, updateExpenses] = useState(expenses);
+  const onAddExpenseHandler = (AddedItem) => {
+    console.log(AddedItem);
+    expense_arr = [...expense_arr, AddedItem];
+    updateExpenses(expense_arr);
     console.log(expense_arr);
-  }
+  };
   return (
     <div className="App">
       {/*       
@@ -53,10 +53,9 @@ function App() {
 
       <FunClick />
     <ClassClick /> */}
-    {/*<EventBind />  */} 
-  <NewExpense addExpense={onAddExpenseHandler}/>
-  <Expenses arr = {expense_arr} /> 
-
+      {/*<EventBind />  */}
+      <NewExpense addExpense={onAddExpenseHandler} />
+      <Expenses arr={expense_arr} />
     </div>
   );
 }
