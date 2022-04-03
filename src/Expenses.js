@@ -11,17 +11,38 @@ function Expenses(props){
         updateYear(SelectedYear);
     }
 
+    const filteredArray = props.arr.filter(expense =>{
+        return expense.date.getFullYear().toString()=== Year;
+    })
+
+
+    // Check why the commented code is not working
+
+    // let expenseContent = <p>No Item found !</p>
+
+    // if(filteredArray.length > 0){
+    //     expenseContent = filteredArray.map( expense => (<ExpenseItem 
+    //         date={expense.date}
+    //         title={expense.title}
+    //         amount={expense.amount}
+    //         key={expense.date} // Whenever you are using map in React always add key prop
+    //         />))
+    // }
+
     return (
         <div className="expenses">
 
             <ExpensesFilter selected={Year} filter={ExpenseFilterHandler}/>  
-
-            {props.arr.map( expense => (<ExpenseItem 
+        
+            {filteredArray.length===0 && <p >No Item found !!</p>}
+            {filteredArray.length > 0 && 
+            filteredArray.map( expense => (<ExpenseItem 
                 date={expense.date}
                 title={expense.title}
                 amount={expense.amount}
-                key={expense.date}
+                key={expense.date} // Whenever you are using map in React always add key prop
                 />))}
+        {/* {expenseContent}*/}
           
         </div>
     );

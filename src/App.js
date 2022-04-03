@@ -13,18 +13,20 @@ import Expenses from "./Expenses";
 import NewExpense from "./Components/NewExpense/NewExpense";
 
 let expenses = [
-  {
-    title: "Life Insurance",
-    amount: 300,
-    date: new Date(2020, 7, 14),
-  },
+  // {
+  //   title:'Life Insurance',
+  //   amount:300,
+  //   date: new Date(2020,7,14),
+  // }
 ];
 function App() {
-  let [expense_arr, updateExpenses] = useState(expenses);
+  const [expense_arr, updateExpenses] = useState(expenses);
   const onAddExpenseHandler = (AddedItem) => {
-    console.log(AddedItem);
-    expense_arr = [...expense_arr, AddedItem];
-    updateExpenses(expense_arr);
+    // updateExpenses([...expense_arr, AddedItem]);
+ 
+    updateExpenses( prevState => {
+      return [...prevState,AddedItem];
+    })
     console.log(expense_arr);
   };
   return (
@@ -54,7 +56,11 @@ function App() {
       <FunClick />
     <ClassClick /> */}
       {/*<EventBind />  */}
-      <NewExpense addExpense={onAddExpenseHandler} />
+
+      {/*This component is helping to update expense array*/}
+      <NewExpense addExpense={onAddExpenseHandler} /> 
+
+    {/* This component is using Updated expense array*/}
       <Expenses arr={expense_arr} />
     </div>
   );
