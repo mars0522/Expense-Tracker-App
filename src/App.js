@@ -1,3 +1,4 @@
+import React,{useState} from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import EventBind from "./Components/EventBind";
@@ -10,19 +11,22 @@ import Message from "./Components/Hello";
 import Welcome from "./Components/Welcome";
 import Expenses from "./Expenses";
 import NewExpense from "./Components/NewExpense/NewExpense";
+
+let expenses = [
+  {
+    title:'Life Insurance',
+    amount:300,
+    date: new Date(2020,7,14),
+  }
+]
 function App() {
 
-  let expenses = [
-    { day:15,month:'August',year:2019, expenseItem:'Life Insurance', expenseAmount:234.23},
-    { day:12,month:'july',year:2020, expenseItem:'Car Insurance', expenseAmount:334.23 },
-    { day:14,month:'June',year:2022, expenseItem:'Mac Book', expenseAmount:782.23},
-    { day:19,month:'April',year:2020, expenseItem:'House EMI', expenseAmount:10000.23}
-   ]
-
-   const onAddExpenseHandler = (expenseItem)=>{
-    console.log('In App.js');
-    console.log(expenseItem);
-}
+  const [expense_arr , updateExpenses] = useState(expenses);
+   const onAddExpenseHandler = (AddedItem)=>{ 
+   
+    updateExpenses([...expense_arr,AddedItem]);
+    console.log(expense_arr);
+  }
   return (
     <div className="App">
       {/*       
@@ -51,7 +55,7 @@ function App() {
     <ClassClick /> */}
     {/*<EventBind />  */} 
   <NewExpense addExpense={onAddExpenseHandler}/>
-  <Expenses arr = {expenses} /> 
+  <Expenses arr = {expense_arr} /> 
 
     </div>
   );
