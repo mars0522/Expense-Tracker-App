@@ -1,7 +1,8 @@
 import React ,{useState} from 'react';
-import ExpenseItem from "./Components/ExpenseItem";
-import ExpensesFilter from "./Components/NewExpense/ExpensesFilter";
-import ExpensesList from './Components/ExpensesList';
+
+import ExpensesFilter from './NewExpense/ExpensesFilter';
+import ExpensesChart from './Chart/ExpensesChart';
+import ExpensesList  from './ExpensesList';
 import './Expenses.css'
 
 function Expenses(props){
@@ -44,9 +45,12 @@ function Expenses(props){
                 key={expense.date} // Whenever you are using map in React always add key prop
                 />))}*/}
 
+            <ExpensesChart expenses={filteredArray}/>
+
             <ExpensesList filteredArray= {filteredArray} />
 
-
+           
+            
         {/* {expenseContent}*/}
           
         </div>

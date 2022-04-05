@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import EventBind from "./Components/EventBind";
-import ClassClick from "./Components/ClassClick";
-import Counter from "./Components/Counter";
-import FunClick from "./Components/FunClick";
-import Greet from "./Components/Greet";
-import Hello from "./Components/Hello";
-import Message from "./Components/Hello";
-import Welcome from "./Components/Welcome";
-import Expenses from "./Expenses";
-import NewExpense from "./Components/NewExpense/NewExpense";
+import NewExpense from "./Components/ExpenseTrancker/NewExpense/NewExpense";
+import Expenses from "./Components/ExpenseTrancker/Expenses";
 
 let expenses = [
   // {
@@ -23,10 +15,10 @@ function App() {
   const [expense_arr, updateExpenses] = useState(expenses);
   const onAddExpenseHandler = (AddedItem) => {
     // updateExpenses([...expense_arr, AddedItem]);
- 
-    updateExpenses( prevState => {
-      return [...prevState,AddedItem];
-    })
+
+    updateExpenses((prevState) => {
+      return [...prevState, AddedItem];
+    });
     console.log(expense_arr);
   };
   return (
@@ -58,9 +50,9 @@ function App() {
       {/*<EventBind />  */}
 
       {/*This component is helping to update expense array*/}
-      <NewExpense addExpense={onAddExpenseHandler} /> 
+      <NewExpense addExpense={onAddExpenseHandler} />
 
-    {/* This component is using Updated expense array*/}
+      {/* This component is using Updated expense array*/}
       <Expenses arr={expense_arr} />
     </div>
   );
